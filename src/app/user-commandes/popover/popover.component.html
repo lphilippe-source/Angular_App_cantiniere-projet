@@ -1,0 +1,23 @@
+<div>
+  <ion-title>
+    Commande du {{order.date}} à {{order.time}}
+  </ion-title>
+  <ion-grid>
+    <ion-row id="first_line">
+      <ion-col>
+        Statut : {{order.statut}}
+      </ion-col>
+      <ion-col class="second_col">
+        Prix total : {{price}}
+      </ion-col>
+    </ion-row>
+    <ion-row class="other_lines" *ngFor="let element of elements">
+      <ion-col>
+        {{element.label}}
+      </ion-col>
+      <ion-col class="second_col">
+        {{element.price}}
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>

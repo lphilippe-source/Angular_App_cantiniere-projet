@@ -1,0 +1,62 @@
+<app-header></app-header>
+<ion-content>
+  <ion-grid class="ion-margin-bottom">
+    <h1>Carte</h1>
+    <h2>Plat du jour</h2>
+    <ion-row *ngFor="let meal of weeklyMeals">
+      <ion-col size="4">
+        <ion-label class="ion-margin-bottom" color="light-contrast"
+          >{{ meal.label }}</ion-label
+        >
+      </ion-col>
+
+      <ion-col size="8" class="ion-text-end">
+        <ion-label
+          class="ion-margin-bottom"
+          color="dark-tint"
+          type="email"
+          name="email"
+          >{{meal.priceDF}} €</ion-label
+        >
+      </ion-col>
+    </ion-row>
+
+    <h2>Boissons</h2>
+    <ion-row *ngFor="let drink of drink">
+      <ion-col size="4">
+        <ion-label class="ion-margin-bottom" color="light-contrast"
+          >{{ drink.label}}</ion-label
+        >
+      </ion-col>
+
+      <ion-col size="8" class="ion-text-end">
+        <ion-label
+          class="ion-margin-bottom"
+          color="dark-tint"
+          type="email"
+          name="email"
+          >{{drink.priceDF}} €</ion-label
+        >
+      </ion-col>
+    </ion-row>
+
+    <h2>Dessert</h2>
+    <ion-row *ngFor="let dessert of dessert">
+      <ion-col size="4">
+        <ion-label class="ion-margin-bottom" color="light-contrast"
+          >{{ dessert.label}}</ion-label
+        >
+      </ion-col>
+
+      <ion-col size="8" class="ion-text-end">
+        <ion-label
+          class="ion-margin-bottom"
+          color="dark-tint"
+          type="email"
+          name="email"
+          >{{dessert.priceDF}} €</ion-label
+        >
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

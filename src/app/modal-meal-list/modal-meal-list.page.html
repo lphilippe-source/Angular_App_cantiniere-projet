@@ -1,0 +1,14 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Liste des plats</ion-title>
+    <ion-icon class="cancel" *ngIf="!select" slot="end" (click)="dismiss()" name="close-circle-outline"></ion-icon>
+    <ion-icon class="validate" *ngIf="select" slot="end" (click)="dismiss()" name="checkmark"></ion-icon>  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item *ngFor="let meal of mealList;let i= index; trackByFn">
+    <ion-label>{{ meal.label }}</ion-label>
+  <ion-checkbox mode="ios" (ionChange)="showCheck($event,meal,i)" >
+  </ion-checkbox>
+</ion-item>
+</ion-content>

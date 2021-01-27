@@ -1,0 +1,68 @@
+// .carte-cat{
+//     display:flex;
+//     justify-content: space-between;
+// }
+// .plat.cat{
+//     min-height:30px !important;
+//     min-width: 60px;
+// }
+// .fond-carte{
+//     background-color:rgba(0, 0, 0, 0.5);
+//     border-radius: 10px;
+//     padding-right:50px;
+//     padding-left:50px;
+// }
+// #btnRetour{
+//     width: 50px; 
+//     // position: relative;
+//     right: 43%;
+//   }
+h1{
+    color: white;
+    text-align: center;
+}
+
+ion-label{
+    font-size: large;
+}
+
+ion-avatar {
+    margin-left: auto;
+    margin-right: auto;
+    border: solid 1px rgba(0, 0, 0, 0.418);
+}
+
+ion-col{
+    background-color: #f7f7f756 !important;
+    border-bottom: solid 1px rgba(0, 0, 0, 0.418);
+    padding: 10px;
+}
+
+ion-avatar {
+    width: 30%;
+    height: 30%;
+}
+
+ion-col + ion-col > ion-label {
+    color: var(--ion-color-grey);
+}
+
+@media(min-width: 576px){
+    ion-avatar{
+        width: 15%;
+        height: 15%;
+    }
+}
+
+@media(min-width: 800px){
+    ion-grid{
+        width: 50%;
+    }
+}
+
+@media(min-width: 1000px){
+    ion-avatar{
+        width: 7%;
+        height: 7%;
+    }
+}

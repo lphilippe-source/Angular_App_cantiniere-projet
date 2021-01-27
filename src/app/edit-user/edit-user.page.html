@@ -1,0 +1,53 @@
+<ion-header>
+  <app-header></app-header>
+</ion-header>
+
+<ion-content>
+  <div id="contenu">
+    <h1>Modifier les infos du compte</h1>
+
+    <form [formGroup]="userForm" (ngSubmit)="onValidate()" class="ion-margin-horizontal" *ngIf="user">
+
+      <!-- IMPORTER UNE IMAGE
+      <ion-input type="file" (change)="onImageUploaded($event)" accept=".png, .jpg, .jpeg"></ion-input>
+      <div class="ion-text-center">
+        <ion-button (click)="uploadImage()" [disabled]="!this.isImageImported" class="ion-margin-bottom" color="primary">Modifier avatar</ion-button>
+      </div>
+      -->
+
+      <ion-label class="ion-margin-bottom" color="light">Nom</ion-label>
+      <ion-item class="ion-margin-bottom">
+        <ion-input color="medium" type="text" name="name" readonly>{{user.name}}</ion-input>
+      </ion-item>
+
+      <ion-label color="light">Prénom</ion-label>
+      <ion-item class="ion-margin-bottom">
+        <ion-input color="medium" type="text" name="firstname" readonly>{{user.firstname}}</ion-input>
+      </ion-item>
+
+      <ion-label color="light">Email</ion-label>
+      <ion-item class="ion-margin-bottom">
+        <ion-input type="email" autocomplete="email" formControlName="email"></ion-input>
+      </ion-item>
+
+      <ion-label color="light">Vérifier email</ion-label>
+      <ion-item class="ion-margin-bottom">
+        <ion-input type="email" autocomplete="off" formControlName="verifyEmail"></ion-input>
+      </ion-item>
+
+      <ion-label color="light">Adresse</ion-label>
+      <ion-item class="ion-margin-bottom">
+        <ion-input type="text" formControlName="address"></ion-input>
+      </ion-item>
+
+      <ion-label color="light">Tél.</ion-label>
+      <ion-item class="ion-margin-bottom">
+        <ion-input type="phone" formControlName="phone" inputmode="decimal" pattern="[0-9]*"></ion-input>
+      </ion-item>
+      
+      <div class="ion-text-center">
+        <ion-button [disabled]="!this.isValidateEnabled" type="submit" class="ion-margin-bottom" color="primary">Valider</ion-button>
+      </div>
+    </form>
+  </div>
+</ion-content>

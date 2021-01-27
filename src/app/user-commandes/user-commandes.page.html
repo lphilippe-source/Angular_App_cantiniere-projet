@@ -1,0 +1,25 @@
+<app-header></app-header>
+
+<ion-content>
+  <div class="contenu">
+    <ion-grid *ngIf="loaded">
+      <ion-row id="thead">
+        <ion-col>
+          Date
+        </ion-col>
+        <ion-col >
+          Statut
+        </ion-col>
+      </ion-row>
+      <ion-row (click)="detail(order)" *ngFor="let order of completedOrders" class="ion-align-items-center">
+        <ion-col>
+          {{order.date}}, {{order.time}}
+        </ion-col>
+        <ion-col>
+          {{order.statut}}
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+</ion-content>

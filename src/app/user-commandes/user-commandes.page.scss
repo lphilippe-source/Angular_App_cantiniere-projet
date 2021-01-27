@@ -1,0 +1,36 @@
+.contenu {
+    width:100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+ion-grid {
+    margin:auto;
+    background-color: #f7f7f756;
+}
+
+#thead {
+    border-top:none;
+}
+
+#thead ion-col {
+    font-size:1.2em;
+}
+
+ion-col {
+    text-align: center;
+}
+
+ion-row {
+    border-top:1px #444444 solid;
+    margin-bottom: 5px;
+    padding-top:5px;
+    cursor:pointer;
+}
+
+@media (min-width:576px){
+    ion-grid {
+        width:800px;
+    }
+  }

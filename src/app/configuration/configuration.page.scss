@@ -1,0 +1,28 @@
+.contenu {
+  width:100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%)
+}
+  
+ion-row{
+    vertical-align:middle;
+  border-width:1px;
+ border-style:solid; 
+ border-color:black;
+ text-align: center;
+ align-items: center;
+  }
+
+  ion-item#input{
+    padding-left: 20%;
+    padding-right: 20%;
+  }
+  
+  ion-col{
+    padding: 10px;
+  }
+
+  p {
+    color: white;
+  }

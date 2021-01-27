@@ -1,0 +1,38 @@
+<article [ngStyle]="{ width: colSize }">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title> </ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-item *ngIf="isLunchLady">
+        <ion-grid>
+          <ion-row>Semaine du {{ date }}</ion-row>
+          <ion-row
+            ><app-week-count
+              [week]="week"
+              (eventIncrement)="nextWeek($event)"
+              (eventDecrement)="nextWeek($event)"
+              (click)="setTime()"
+            ></app-week-count>
+          </ion-row>
+          <ion-row>
+            <ion-button (click)="showMealList()">ajouter un plat</ion-button>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+
+      <ion-item *ngIf="!isLunchLady">
+        <ion-text
+          ><p>Fin des commandes pour le</p>
+          <p>{{ dateOfDay }} :</p>
+          <p>{{ timelapse }}</p>
+        </ion-text>
+      </ion-item>
+    </ion-card-content>
+
+    <div>
+      <div class="plat"></div>
+    </div>
+  </ion-card>
+</article>

@@ -1,0 +1,39 @@
+<app-header></app-header>
+
+<ion-content class="ion-text-center">
+  <div class="contenu">
+    <p>Trouver un utilisateur</p>
+
+      <ion-searchbar #searchBar id="barSearch" placeholder="Nom"></ion-searchbar>
+  
+      <ion-grid>
+        <ion-button color="primary" (click)="searchUser(searchBar)"><b></b>Rechercher</ion-button><br><br>
+        <ion-button color="primary" (click)="refresh()"><b></b>Rafraichir</ion-button><br><br>
+      </ion-grid>
+
+    <ion-grid id="articles" class="ion-margin">
+      <ion-row id="titles">
+        <ion-col size="3">Nom</ion-col>
+        <ion-col size="3">Prenom</ion-col>
+        <ion-col size="3">Cagnotte</ion-col>
+        <ion-col size="3"></ion-col>
+      </ion-row>
+
+      <ion-row
+        *ngFor="let user of Users; let i = index; trackBy: trackByFn"
+        class="contents"
+      >
+        <ion-col size="3">{{ user.name }}</ion-col>
+        <ion-col size="3">{{ user.firstname }}</ion-col>
+        <ion-col size="3">{{ user.wallet }}€</ion-col>
+        <ion-col size="3"
+          ><ion-button
+            [routerLink]="'/gestion-cagnotte/' + i"
+            color="secondary"
+            size="small"
+            ><img id="loupe" src="../../assets/images/loupe.png" /></ion-button
+        ></ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

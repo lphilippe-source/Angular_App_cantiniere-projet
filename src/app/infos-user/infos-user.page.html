@@ -1,0 +1,84 @@
+<ion-header>
+  <app-header></app-header>
+</ion-header>
+
+<ion-content *ngIf="user">
+
+    <h1>Mon compte</h1>
+
+    <ion-grid class="ion-margin-bottom">
+
+      <ion-avatar class="ion-margin-bottom">
+        <ion-img [src]="baseUrl + user.image.imagePath"></ion-img>
+      </ion-avatar>
+
+      <ion-row>
+          <ion-col size="4">
+            <ion-label class="ion-margin-bottom" color="light-contrast">Email</ion-label>
+          </ion-col>
+
+          <ion-col size="8" class="ion-text-end">
+            <ion-label class="ion-margin-bottom" color="dark-tint" type="email" name="email">{{user.email}}</ion-label>
+          </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="4">
+          <ion-label class="ion-margin-bottom" color="light-contrast">Adresse</ion-label>
+        </ion-col>
+
+        <ion-col size="8" class="ion-text-end">
+          <ion-label class="ion-margin-bottom" color="dark-tint" type="text" name="adress">{{user.address}}</ion-label>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="4">
+          <ion-label class="ion-margin-bottom" color="light-contrast">Nom</ion-label>
+        </ion-col>
+
+        <ion-col size="8" class="ion-text-end">
+          <ion-label class="ion-margin-bottom" color="dark-tint" type="text" name="name">{{user.name}}</ion-label>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="4">
+          <ion-label class="ion-margin-bottom" color="light-contrast">Prénom</ion-label>
+        </ion-col>
+
+        <ion-col size="8" class="ion-text-end">
+          <ion-label class="ion-margin-bottom" color="dark-tint" type="text" name="firstname">{{user.firstname}}</ion-label>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="4">
+          <ion-label class="ion-margin-bottom" color="light-contrast">Tél.</ion-label>
+        </ion-col>
+
+        <ion-col size="8" class="ion-text-end">
+          <ion-label class="ion-margin-bottom" color="dark-tint" type="number" name="phone">{{user.phone}}</ion-label>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="4">
+          <ion-label class="ion-margin-bottom" color="light-contrast">Cagnotte</ion-label>
+        </ion-col>
+
+        <ion-col size="8" class="ion-text-end">
+          <ion-label class="ion-margin-bottom" color="red" type="number" name="phone" disabled>{{user.wallet}} €</ion-label>
+        </ion-col>
+      </ion-row>
+
+    </ion-grid>
+
+    <div class="ion-text-center">
+      <ion-button [routerLink]="'/edit-user/' + user.id" color="primary">Modifier informations</ion-button>
+
+      <!-- TODO: implémenter le routerLink quand la page des commandes sera faite-->
+        <ion-button class="ion-text-wrap" color="primary">Voir mes commandes</ion-button>
+    </div>
+
+</ion-content>

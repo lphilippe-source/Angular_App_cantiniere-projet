@@ -1,0 +1,26 @@
+// ion-content{
+//     --background: url("../../assets/images/wallpaper\ cafeteria.jpg") no-repeat center center / cover;
+// }
+
+.contenu {
+    width:100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%)
+  }
+
+h1{
+    color: white;
+    text-align: center;
+}
+
+ion-label{
+    font-size: large;
+}
+
+@media(min-width: 576px){
+    form{
+        margin: auto;
+        width: 50%;
+    }
+}

@@ -1,0 +1,49 @@
+h1{
+    color: white;
+    text-align: center;
+}
+
+ion-label{
+    font-size: large;
+}
+
+ion-avatar {
+    margin-left: auto;
+    margin-right: auto;
+    border: solid 1px rgba(0, 0, 0, 0.418);
+}
+
+ion-col{
+    background-color: #f7f7f756;
+    border-bottom: solid 1px rgba(0, 0, 0, 0.418);
+    padding: 10px;
+}
+
+ion-avatar {
+    width: 30%;
+    height: 30%;
+}
+
+ion-col + ion-col > ion-label {
+    color: var(--ion-color-grey);
+}
+
+@media(min-width: 576px){
+    ion-avatar{
+        width: 15%;
+        height: 15%;
+    }
+}
+
+@media(min-width: 800px){
+    ion-grid{
+        width: 50%;
+    }
+}
+
+@media(min-width: 1000px){
+    ion-avatar{
+        width: 13%;
+        height: 13%;
+    }
+}

@@ -1,0 +1,65 @@
+<app-header></app-header>
+
+<ion-content fullsceen="true" class="card-content">
+  <section
+    id="bg">
+    <div class="flex content">
+      <ion-grid *ngIf="weeklyMeals">
+        <ion-row size="2">
+          <ion-col
+            [dashboard]="i"
+            size-sm
+            size="12"
+            *ngFor="let wikiMeal of weeklyMeals; let i =index; trackBy: trackByFn"
+          >
+            <app-dashboard
+              *ngIf="i===0"
+              (WeekChange)="showMeal($event)"
+              [week]="showActualWeek()"
+              [isLunchLady]="isLunchLady"
+              [weeklyMeals]="weeklyMeals"
+              (DisplayDate)="getDate($event)"
+            ></app-dashboard>
+
+            <article #article *ngIf="i!==0" [ngStyle]="{'width':colSize}">
+              <ion-card>
+                <ion-card-header>
+                  <div (click)="deleteItem(article,i,wikiMeal.id)" *ngIf="isLunchLady" class="icon-close">
+                  <ion-icon  name="close-circle-outline"></ion-icon>
+                  </div>
+                  <ion-img
+                    [src]="wikiMeal.src"
+                    (click)="showModal(wikiMeal)"
+                  ></ion-img>
+
+                  <ion-card-title mode="md">
+                    <a (click)="showModal(wikiMeal)" class="btn style_button">
+                      COMMANDER
+                    </a>
+                  </ion-card-title>
+                  <ion-card-subtitle (click)="showModal(wikiMeal)">
+                    <h2>
+                      <p>{{ wikiMeal.priceDF | currency:'EUR' }}</p>
+                    </h2>
+                  </ion-card-subtitle>
+                </ion-card-header>
+
+                <ion-card-subtitle mode="md"
+                  ><a routerLink="/carte">
+                    <p>Voir la carte</p>
+                  </a></ion-card-subtitle
+                >
+                <div (click)="showModal(wikiMeal)">
+                  <div class="plat">
+                    {{wikiMeal.description }}
+                    <p>{{ wikiMeal.label }}</p>
+                  </div>
+                </div>
+              </ion-card>
+            </article>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </section>
+</ion-content>

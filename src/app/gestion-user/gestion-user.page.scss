@@ -1,0 +1,54 @@
+.contenu {
+  width:100%;
+  position: absolute;
+}
+.contents:hover{
+  background: rgba(0, 0, 0, 0.322);
+  cursor: pointer;
+}
+ion-col{
+  color: white;
+}
+ion-grid{
+  width:75%!important;
+}
+
+ion-grid#articles {
+  border: 1px solid black;
+  padding: 0px;
+}
+
+ion-row#titles{
+  font-weight: bold;
+  background-color: rgba(0, 0, 0, 0.322);
+}
+
+ion-row.contents{
+  background-color: rgba(0, 0, 0, 0.089);
+}
+
+ion-label#total{
+  font-size: 20px;
+}
+
+h1{
+  color: white;
+  text-align: center;
+}
+
+@media(min-width: 576px){
+  ion-grid{
+      margin: auto;
+      width: 50%;
+  }
+}
+
+ion-searchbar{
+  padding-left: 20%;
+  padding-right: 20%;
+  background-color: transparent;
+}
+
+  #loupe {
+    width: 20px;
+  }

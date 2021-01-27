@@ -1,0 +1,25 @@
+<app-header></app-header>
+
+<ion-content class="ion-text-center">
+
+  <div class="contenu">
+    <h1>Commandes</h1>
+
+    <ion-grid id="articles" class="ion-margin">
+      <ion-row id="titles">
+        <ion-col size="4">Date</ion-col>
+        <ion-col size="4">Utilisateur</ion-col>
+        <ion-col size="2">Prix</ion-col>
+        <ion-col size="2">Status</ion-col>
+      </ion-row>
+
+      <ion-row (click)="showModal(order)" *ngFor="let order of orders; let i = index; trackBy: trackByFn" class="contents">
+        <ion-col size="4">{{ order.creationDate }} {{order.creationTime }}</ion-col>
+        <ion-col size="4">{{ order.user.firstname }} {{order.user.name }} </ion-col>
+        <ion-col size="2"><p *ngFor="let qty of order.quantity">{{ qty.quantity*qty.meal.priceDF }}</p></ion-col>
+        <ion-col size="2">{{ order.status }}</ion-col>
+      </ion-row>
+      <!-- <ion-button (click)="showModal(order)" color="primary">Voir</ion-button> -->
+    </ion-grid>
+  </div>
+</ion-content>

@@ -1,0 +1,45 @@
+<app-header></app-header>
+
+<ion-content class="ion-text-center">
+
+  <h1 *ngIf="!cart">Votre panier est vide. Consultez le menu de la semaine pour commander un plat.</h1>
+
+  <div class="contenu" *ngIf="cart">
+    <h1 *ngIf="meals">Votre panier</h1>
+    
+    <ion-grid id="articles" class="ion-margin" *ngFor="let day of days">
+      
+      <h2><ion-icon name="today-outline"></ion-icon> {{day.day}}</h2>
+
+      <div id="border">
+        <ion-row id="titles">
+          <ion-col size="2">Qte</ion-col>
+          <ion-col size="4">Prix</ion-col>
+          <ion-col size="6">Nom</ion-col>
+        </ion-row>
+
+        <ion-row class="contents" *ngFor="let meal of day.meal">
+          <ion-col size="2">{{meal.quantity}}</ion-col>
+          <ion-col size="4">{{meal.unitPrice}}</ion-col>
+          <ion-col size="6">{{meal.name}}</ion-col>
+        </ion-row>
+      </div>
+      
+    </ion-grid>
+
+    <ion-grid>
+      <ion-row class="ion-margin-vertical">
+        <ion-col class="ion-text-center">
+          <ion-label id="total" class="ion-margin-bottom" color="light">Total: {{cart.priceTotal}}</ion-label>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-button [disabled]="!isEnoughMoney" (click)="onValidate()" color="primary">Valider la commande</ion-button>
+    <ion-button (click)="onCleanCart()" color="primary">Vider le panier</ion-button>
+
+    <p *ngIf="isEnoughMoney">Crédits insuffisants</p>
+
+  </div>
+
+</ion-content>

@@ -1,0 +1,28 @@
+ion-icon{
+    font-size: 30px;
+    cursor: pointer;
+    color:white;
+
+}
+.validate{
+    color:greenyellow;
+    font-size: 40px;
+}
+ion-toolbar{
+    --background: #324553!important;
+}
+
+ion-title{
+   --color:white;
+}
+.modal-wrapper.sc-ion-modal-md{
+    --width:400px!important;
+}
+.sc-ion-modal-md{
+    --width:400px!important;
+    // .ion-overlay-wrapper.sc-ion-modal-md
+}
+app-modal-meal-list{
+    --width:400px!important;
+    width:400px!important;
+}

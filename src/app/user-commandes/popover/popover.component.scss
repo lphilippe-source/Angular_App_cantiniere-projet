@@ -1,0 +1,32 @@
+@media (min-width:576px) {
+    ion-grid {
+        width:70%;
+        margin:auto;
+    }
+}
+
+ion-title {
+    width:100%;
+    text-align: center;
+    margin-bottom:15px;
+    font-size:1.3em;
+}
+
+#first_line ion-col {
+    font-size:1.1em;
+    text-align:center;
+}
+
+.other_lines {
+    width:60%;
+    margin:auto;
+}
+
+.second_col { 
+    text-align: end;
+}
+
+* {
+    color:black;
+}
+
